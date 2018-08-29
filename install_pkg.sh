@@ -125,17 +125,14 @@ fi
 ##############################################################################
 echo "Jupyter notebook setting..."
 
-jupyter contrib nbextension install --user
-jupyter nbextensions_configurator enable --user
-
-jupyter nbextension install --user --py ipyparallel
-jupyter nbextension enable --user --py ipyparallel
-jupyter serverextension enable --user --py ipyparallel
-ipcluster nbextension enable --user
-
-jupyter nbextension disable --user --py nbpresent
-jupyter serverextension disable --user --py nbpresent
-
+jupyter contrib nbextension install --user && \
+jupyter nbextensions_configurator enable --user && \
+jupyter nbextension enable --py widgetsnbextension && \
+jupyter nbextension install --user --py ipyparallel  && \
+jupyter nbextension enable --user --py ipyparallel && \
+jupyter serverextension enable --user --py ipyparallel && \
+ipcluster nbextension enable --user && \
+jupyter serverextension enable ipyparallel.nbextension
 
 ##############################################################################
 # CyLP package install
