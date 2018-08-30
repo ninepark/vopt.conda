@@ -2,6 +2,7 @@ aniso8601
 argon2_cffi
 arrow-cpp
 autopep8
+awscli
 bcrypt
 blas
 blinker
