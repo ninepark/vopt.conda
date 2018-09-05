@@ -6,8 +6,10 @@ django-jinja
 fake-useragent
 Flask-Dance[sqla]
 ipython-genutils
+jsonpath-rw
 lunardate
 msgpack
+pandasdmx
 pipdeptree
 osqp
 scrapyd
