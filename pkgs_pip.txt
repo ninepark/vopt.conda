@@ -1,3 +1,4 @@
+ansible
 autobahn
 bs4
 buildbot[bundle]
