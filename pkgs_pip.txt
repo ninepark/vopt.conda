@@ -20,4 +20,4 @@ tushare
 txaio
 git+https://github.com/thedataincubator/ihtml.git
 git+https://github.com/hmmlearn/hmmlearn.git
-
+git+https://github.com/VeranosTech/ipython-sql.git@fix_prettytable
