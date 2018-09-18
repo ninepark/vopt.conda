@@ -135,6 +135,12 @@ ipcluster nbextension enable --user && \
 jupyter serverextension enable ipyparallel.nbextension
 
 ##############################################################################
+# Cleaning
+##############################################################################
+echo "Cleaning..."
+conda clean --yes --all
+
+##############################################################################
 # CyLP package install
 ##############################################################################
 echo "CyLP package installing..."
