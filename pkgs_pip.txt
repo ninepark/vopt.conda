@@ -15,7 +15,6 @@ pipdeptree
 osqp
 scrapyd
 scrapyd-client
-scs
 tushare
 txaio
 git+https://github.com/thedataincubator/ihtml.git

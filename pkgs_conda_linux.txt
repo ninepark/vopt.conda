@@ -116,6 +116,7 @@ pickleshare
 pip
 plotly
 pluggy
+ply
 prompt_toolkit
 psycopg2
 ptyprocess

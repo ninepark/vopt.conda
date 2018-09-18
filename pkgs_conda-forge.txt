@@ -66,6 +66,7 @@ pyyaml
 requests-oauthlib>=1.0.0
 rsa
 s3transfer
+scs
 speaklater
 sqlalchemy-migrate
 suitesparse
