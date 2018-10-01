@@ -3,8 +3,10 @@
 ##############################################################################
 # Anaconda channel cleaning
 ##############################################################################
-conda config --remove-key channels
-conda config --append channels anaconda --append channels conda-forge --append channels defaults
+if [[ $(conda config --get channels) ]]; then
+    conda config --remove-key channels;
+fi
+conda config --append channels anaconda --append channels conda-forge
 
 
 ENV=vopt
