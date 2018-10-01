@@ -13,6 +13,7 @@ msgpack
 pandasdmx
 pipdeptree
 osqp
+pamqp
 rabbitpy
 scrapyd
 scrapyd-client

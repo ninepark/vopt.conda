@@ -99,7 +99,7 @@ nose
 notebook=5.4.0
 numba
 numpy
-openblas
+openblas>=0.2.20
 openssl
 packaging
 pandas
@@ -132,7 +132,7 @@ pyjwt
 pymongo
 pyopenssl
 pyparsing
-pyqt
+pyqt>=5.9.2
 pysocks
 pytest
 pytest-runner
@@ -183,6 +183,7 @@ wcwidth
 webencodings
 werkzeug
 wheel
+widgetsnbextension
 xarray
 xlrd
 xlwt
