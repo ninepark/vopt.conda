@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+##############################################################################
+# Anaconda channel cleaning
+##############################################################################
+conda config --remove-key channels
+conda config --append channels anaconda --append channels conda-forge --append channels defaults
+
+
+ENV=vopt
+
 if [[ "$#" -eq "0" ]]; then
   OFFLINE=""
   echo "Set online install mode."
@@ -11,6 +20,13 @@ else
               shift
               OFFLINE="--offline"
               echo "Set offline install mode."
+            shift; continue
+            ;;
+          --env)
+              shift
+              ENV=$1
+            shift; continue
+            ;;
       esac
   done
 fi
@@ -23,7 +39,7 @@ if [ ! -z "$OFFLINE" ]; then
 fi
 
 echo "Creating conda environment..."
-conda create --name vopt --yes python=3.6 ${OFFLINE}
+conda create --name ${ENV} --yes python=3.6 ${OFFLINE}
 
 if [ ! -z "$OFFLINE" ]; then
   echo "Clean conda cache..."

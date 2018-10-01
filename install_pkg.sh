@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+##############################################################################
+# Anaconda channel cleaning
+##############################################################################
+conda config --remove-key channels
+conda config --append channels anaconda --append channels conda-forge --append channels defaults
+
+
+ENV=vopt
 
 ##############################################################################
 # input argument processing
@@ -15,10 +23,43 @@ else
               shift
               OFFLINE="--offline"
               echo "Set offline install mode."
+            shift; continue
+            ;;
+          --env)
+                shift
+                ENV=$1
+            shift; continue
+            ;;
       esac
   done
 fi
 
+while true; do
+    [ $# -eq 0 ] && break
+    case $1 in
+        --ami_name)
+            shift
+            ami_name=$1
+            case $1 in
+                "")
+                    usage; return 1
+                    ;;
+            esac
+            shift; continue
+            ;;
+        --instane_id)
+            shift
+            instance_id=$1
+            case $1 in
+                "")
+                    usage; return 1
+                    ;;
+            esac
+            shift; continue
+            ;;
+    esac
+    usage; return 1;
+done
 
 ##############################################################################
 # OS check
@@ -42,24 +83,24 @@ esac
 ##############################################################################
 export MACOSX_DEPLOYMENT_TARGET=10.10
 
-export PKG_CONFIG_PATH=$HOME/anaconda3/envs/vopt/lib/pkgconfig/
-export LD_LIBRARY_PATH=$HOME/anaconda3/envs/vopt/lib:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=$HOME/anaconda3/envs/${ENV}/lib/pkgconfig/
+export LD_LIBRARY_PATH=$HOME/anaconda3/envs/${ENV}/lib:$LD_LIBRARY_PATH
 
-export COIN_INSTALL_DIR=$HOME/anaconda3/envs/vopt/
-export COIN_LIB_DIR=$HOME/anaconda3/envs/vopt/lib/
-export COIN_INC_DIR=$HOME/anaconda3/envs/vopt/include/coin/
+export COIN_INSTALL_DIR=$HOME/anaconda3/envs/${ENV}/
+export COIN_LIB_DIR=$HOME/anaconda3/envs/${ENV}/lib/
+export COIN_INC_DIR=$HOME/anaconda3/envs/${ENV}/include/coin/
 export CYLP_USE_CYTHON=TRUE
 
-export GLPK_LIB_DIR=$HOME/anaconda3/envs/vopt/
-export GLPK_INC_DIR=$HOME/anaconda3/envs/vopt/include
+export GLPK_LIB_DIR=$HOME/anaconda3/envs/${ENV}/
+export GLPK_INC_DIR=$HOME/anaconda3/envs/${ENV}/include
 export BUILD_GLPK=1
 
 
 ##############################################################################
 # environment activation
 ##############################################################################
-echo "Activate vopt environment..."
-source activate vopt
+echo "Activate ${ENV} environment..."
+source activate ${ENV}
 
 if [ ! -z "$OFFLINE" ]; then
   echo "Clean conda cache..."
@@ -170,5 +211,5 @@ fi
 ##############################################################################
 # environment deactivation
 ##############################################################################
-echo "Deactivate vopt environment..."
+echo "Deactivate ${ENV} environment..."
 source deactivate
