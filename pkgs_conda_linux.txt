@@ -99,7 +99,7 @@ nose
 notebook=5.4.0
 numba
 numpy
-openblas>=0.2.20
+openblas=0.2.20=4
 openssl
 packaging
 pandas
@@ -132,7 +132,7 @@ pyjwt
 pymongo
 pyopenssl
 pyparsing
-pyqt>=5.9.2
+pyqt=5.9.2=py36h22d08a2_0
 pysocks
 pytest
 pytest-runner
