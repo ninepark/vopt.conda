@@ -62,6 +62,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
      postgresql \
      postgresql-contrib \
      protobuf-compiler \
+     rabbitmq-server \
      rsyslog \
      screen \
      software-properties-common \

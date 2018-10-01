@@ -62,6 +62,7 @@ pudb
 pyarrow
 pycrypto
 pyflakes
+pyhamcrest
 python-highcharts
 pyyaml
 requests-oauthlib>=1.0.0
