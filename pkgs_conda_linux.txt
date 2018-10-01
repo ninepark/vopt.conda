@@ -100,6 +100,7 @@ notebook=5.4.0
 numba
 numpy
 openblas=0.2.20=4
+openblas-devel=0.2.20=4
 openssl
 packaging
 pandas
