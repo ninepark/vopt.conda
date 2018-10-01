@@ -10,11 +10,9 @@ ipython-genutils
 jsonpath-rw
 lunardate
 msgpack
+osqp
 pandasdmx
 pipdeptree
-osqp
-pamqp
-rabbitpy
 scrapyd
 scrapyd-client
 tushare

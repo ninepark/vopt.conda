@@ -55,6 +55,7 @@ oauthlib
 parquet-cpp
 passlib
 pep8-naming
+pika
 pgspecial
 prettytable
 pudb
