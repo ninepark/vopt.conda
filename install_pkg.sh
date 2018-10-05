@@ -88,15 +88,19 @@ export MACOSX_DEPLOYMENT_TARGET=10.10
 export PKG_CONFIG_PATH=$HOME/anaconda3/envs/${ENV}/lib/pkgconfig/
 export LD_LIBRARY_PATH=$HOME/anaconda3/envs/${ENV}/lib:$LD_LIBRARY_PATH
 
+# to install CoinCBC and CyLP
 export COIN_INSTALL_DIR=$HOME/anaconda3/envs/${ENV}/
 export COIN_LIB_DIR=$HOME/anaconda3/envs/${ENV}/lib/
 export COIN_INC_DIR=$HOME/anaconda3/envs/${ENV}/include/coin/
 export CYLP_USE_CYTHON=TRUE
 
+# to install GLPK
 export GLPK_LIB_DIR=$HOME/anaconda3/envs/${ENV}/
 export GLPK_INC_DIR=$HOME/anaconda3/envs/${ENV}/include
 export BUILD_GLPK=1
 
+# to install airflow
+export AIRFLOW_GPL_UNIDECODE=yes
 
 ##############################################################################
 # environment activation

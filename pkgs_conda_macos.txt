@@ -15,6 +15,7 @@ certifi
 cffi
 chardet
 click
+configparser
 constantly
 coverage
 cryptography
@@ -37,7 +38,9 @@ flake8
 flask
 fontconfig
 freetype
+funcsigs
 gevent
+gitpython
 glib
 gmp
 graphviz
@@ -57,6 +60,7 @@ ipykernel
 ipyparallel
 ipython>=6.3.1
 ipython_genutils
+iso8601
 itsdangerous
 jedi
 jinja2
@@ -138,6 +142,7 @@ pytest
 pytest-runner
 python=3.6
 python-dateutil
+python-daemon
 python-editor
 python-graphviz
 pytz
@@ -168,6 +173,7 @@ sqlalchemy
 sqlite
 sqlparse
 statsmodels
+tabulate
 terminado
 testpath
 tk
@@ -177,6 +183,8 @@ tqdm
 traitlets
 twisted
 typing
+tzlocal
+unicodecsv
 urllib3
 w3lib
 wcwidth
@@ -191,4 +199,5 @@ xz
 zeromq
 zlib
 zope
+zope.deprecation
 zope.interface

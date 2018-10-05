@@ -12,6 +12,7 @@ cerberus
 chaospy
 coincbc
 colorama
+croniter
 cufflinks-py
 dill
 django-crispy-forms
@@ -22,7 +23,9 @@ ecdsa
 events
 fastparquet
 feather-format
+flask-admin
 flask-babelex
+flask-caching
 flask-login
 flask-mail
 flask-migrate
@@ -31,8 +34,10 @@ flask-restplus
 flask-script
 flask-security
 flask-sqlalchemy
+flask-swagger
 flask-webpack
 flask-wtf
+flower
 glpk
 gmp
 google-api-python-client
@@ -54,6 +59,7 @@ nbsphinx
 oauthlib
 parquet-cpp
 passlib
+pendulum
 pep8-naming
 pika
 pgspecial
@@ -64,15 +70,18 @@ pycrypto
 pyflakes
 pyhamcrest
 python-highcharts
+python-nvd3
 pyyaml
 requests-oauthlib>=1.0.0
 rsa
 s3transfer
 scs
+setproctitle
 speaklater
 sqlalchemy-migrate
 suitesparse
 tbb
+tenacity
 terraform
 thrift
 treq
