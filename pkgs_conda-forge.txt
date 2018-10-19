@@ -1,4 +1,3 @@
-airflow
 aniso8601
 argon2_cffi
 arrow-cpp

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 ENV=vopt
-alias conda=${HOME}/anaconda3/bin/conda
 
 
 ##############################################################################
