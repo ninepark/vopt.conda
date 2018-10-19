@@ -1,0 +1,11 @@
+--- subdir_data.py.org	2018-10-19 13:51:43.000000000 +0900
++++ subdir_data.py	2018-10-19 13:52:14.000000000 +0900
+@@ -366,6 +366,8 @@
+ 
+         channel_url = self.url_w_credentials
+         for fn, info in iteritems(json_obj.get('packages', {})):
++            if info is None:
++                continue
+             info['fn'] = fn
+             info['url'] = join_url(channel_url, fn)
+             if add_pip and info['name'] == 'python' and info['version'].startswith(('2.', '3.')):
