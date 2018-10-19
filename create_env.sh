@@ -41,7 +41,7 @@ if [ ! -z "$OFFLINE" ]; then
 fi
 
 echo "Creating conda environment..."
-conda create --name ${ENV} --yes ${OFFLINE}
+conda create --name ${ENV} --yes python=3.6 ${OFFLINE}
 
 if [ ! -z "$OFFLINE" ]; then
   echo "Clean conda cache..."
