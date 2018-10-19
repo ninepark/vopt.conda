@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 ENV=vopt
+alias conda=${HOME}/anaconda3/bin/conda
+
 
 while true; do
   [ $# -eq 0 ] && break

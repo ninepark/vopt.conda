@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+ENV=vopt
+alias conda=${HOME}/anaconda3/bin/conda
+
+
 ##############################################################################
 # Anaconda channel cleaning
 ##############################################################################
@@ -8,8 +12,6 @@ if [[ $(conda config --get channels) ]]; then
 fi
 conda config --append channels anaconda --append channels conda-forge
 
-
-ENV=vopt
 
 if [[ "$#" -eq "0" ]]; then
   OFFLINE=""
