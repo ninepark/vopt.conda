@@ -14,4 +14,4 @@ while true; do
   esac
 done
 
-conda env remove --name ${ENV} --yes
+$HOME/anaconda3/bin/conda env remove --name ${ENV} --yes

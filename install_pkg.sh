@@ -6,10 +6,10 @@ ENV=vopt
 ##############################################################################
 # Anaconda channel cleaning
 ##############################################################################
-if [[ $(conda config --get channels) ]]; then
-    conda config --remove-key channels;
+if [[ $($HOME/anaconda3/bin/conda config --get channels) ]]; then
+    $HOME/anaconda3/bin/conda config --remove-key channels;
 fi
-conda config --append channels anaconda --append channels conda-forge
+$HOME/anaconda3/bin/conda config --append channels anaconda --append channels conda-forge
 
 
 ##############################################################################
@@ -107,15 +107,15 @@ export AIRFLOW_GPL_UNIDECODE=yes
 # environment activation
 ##############################################################################
 echo "Activate ${ENV} environment..."
-source activate ${ENV}
+source $HOME/anaconda3/bin/activate ${ENV}
 
 if [ ! -z "$OFFLINE" ]; then
   echo "Clean conda cache..."
   rm -Rf `ls -1 -d ./pkgs/*/`
 
   echo "Change conda config..."
-  conda config --prepend pkgs_dirs ./pkgs
-  echo $(conda config --show pkgs_dirs)
+  $HOME/anaconda3/bin/conda config --prepend pkgs_dirs ./pkgs
+  echo $($HOME/anaconda3/bin/conda config --show pkgs_dirs)
 
   echo "Merging large file..."
   find ./pkgs -type f -name *tar.bz2.aa | sed -e 's/tar.bz2.aa/tar.bz2/g' | while read file; do
@@ -135,21 +135,21 @@ fi
 # Anaconda update
 ##############################################################################
 echo "Updating Anaconda conda..."
-conda update -n base --yes --verbose conda  ${OFFLINE}
+$HOME/anaconda3/bin/conda update -n base --yes --verbose conda  ${OFFLINE}
 
 
 ##############################################################################
 # Anaconda package in anaconda channel installation
 ##############################################################################
 echo "Installing Anaconda Packages..."
-cat $pkgs_conda | paste -sd " " - | xargs conda install --channel anaconda --copy --yes --verbose ${OFFLINE}
+cat $pkgs_conda | paste -sd " " - | xargs $HOME/anaconda3/bin/conda install --channel anaconda --copy --yes --verbose ${OFFLINE}
 
 
 ##############################################################################
 # Anaconda package in conda-forge channel installation
 ##############################################################################
 echo "Installing Conda-Forge Packages..."
-cat pkgs_conda-forge.txt | paste -sd " " - | xargs conda install --channel conda-forge --copy --yes --verbose ${OFFLINE}
+cat pkgs_conda-forge.txt | paste -sd " " - | xargs $HOME/anaconda3/bin/conda install --channel conda-forge --copy --yes --verbose ${OFFLINE}
 
 
 ##############################################################################
@@ -157,8 +157,8 @@ cat pkgs_conda-forge.txt | paste -sd " " - | xargs conda install --channel conda
 ##############################################################################
 if [ ! -z "$OFFLINE" ]; then
   echo "Recover conda config..."
-  conda config --remove pkgs_dirs ./pkgs
-  echo $(conda config --show pkgs_dirs)
+  $HOME/anaconda3/bin/conda config --remove pkgs_dirs ./pkgs
+  echo $($HOME/anaconda3/bin/conda config --show pkgs_dirs)
 
   echo "Installing Pip Packages (offline)..."
   cat pkgs_pip.txt | paste -sd " " - | xargs pip install --no-deps --no-index --find-links ./pkgs_pip
@@ -173,20 +173,20 @@ fi
 ##############################################################################
 echo "Jupyter notebook setting..."
 
-jupyter contrib nbextension install --user && \
-jupyter nbextensions_configurator enable --user && \
-jupyter nbextension enable --py widgetsnbextension && \
-jupyter nbextension install --user --py ipyparallel  && \
-jupyter nbextension enable --user --py ipyparallel && \
-jupyter serverextension enable --user --py ipyparallel && \
-ipcluster nbextension enable --user && \
-jupyter serverextension enable ipyparallel.nbextension
+$HOME/anaconda3/envs/$ENV/bin/jupyter contrib nbextension install --user && \
+$HOME/anaconda3/envs/$ENV/bin/jupyter nbextensions_configurator enable --user && \
+$HOME/anaconda3/envs/$ENV/bin/jupyter nbextension enable --py widgetsnbextension && \
+$HOME/anaconda3/envs/$ENV/bin/jupyter nbextension install --user --py ipyparallel  && \
+$HOME/anaconda3/envs/$ENV/bin/jupyter nbextension enable --user --py ipyparallel && \
+$HOME/anaconda3/envs/$ENV/bin/jupyter serverextension enable --user --py ipyparallel && \
+$HOME/anaconda3/envs/$ENV/bin/ipcluster nbextension enable --user && \
+$HOME/anaconda3/envs/$ENV/bin/jupyter serverextension enable ipyparallel.nbextension
 
 ##############################################################################
 # Cleaning
 ##############################################################################
 echo "Cleaning..."
-conda clean --yes --all
+$HOME/anaconda3/bin/conda clean --yes --all
 
 ##############################################################################
 # CyLP package install
@@ -198,7 +198,7 @@ if [[ -v CYLP_SRC_DIR ]]; then
     echo "CyLP package for Python3 Develop Mode installing from local: $CYLP_SRC_DIR" && \
     curdir=$PWD &&
     cd "$CYLP_SRC_DIR" && \
-    python setup.py develop && \
+    $HOME/anaconda3/envs/$ENV/bin/python setup.py develop && \
     cd $curdir
   else
     echo "$CYLP_SRC_DIR not exist!. stop."
@@ -207,10 +207,10 @@ if [[ -v CYLP_SRC_DIR ]]; then
 else
   if [ ! -z "$OFFLINE" ]; then
     echo "CyLP package for Python3 installing (offline mode)..."
-    pip install pkgs_pip/cylp.zip
+    $HOME/anaconda3/envs/$ENV/bin/pip install pkgs_pip/cylp.zip
   else
     echo "CyLP package for Python3 installing from Github..."
-    pip install git+https://github.com/VeranosTech/CyLP.git@py3
+    $HOME/anaconda3/envs/$ENV/bin/pip install git+https://github.com/VeranosTech/CyLP.git@py3
   fi
 fi
 
@@ -219,4 +219,4 @@ fi
 # environment deactivation
 ##############################################################################
 echo "Deactivate ${ENV} environment..."
-source deactivate
+source $HOME/anaconda3/bin/deactivate
