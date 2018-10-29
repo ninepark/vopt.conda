@@ -9,7 +9,7 @@ ENV=vopt
 if [[ $($HOME/anaconda3/bin/conda config --get channels) ]]; then
     $HOME/anaconda3/bin/conda config --remove-key channels;
 fi
-$HOME/anaconda3/bin/conda config --append channels anaconda --append channels conda-forge
+$HOME/anaconda3/bin/conda config --append channels conda-forge
 
 
 ##############################################################################
@@ -142,7 +142,7 @@ $HOME/anaconda3/bin/conda update -n base --yes --verbose conda  ${OFFLINE}
 # Anaconda package in anaconda channel installation
 ##############################################################################
 echo "Installing Anaconda Packages..."
-cat $pkgs_conda | paste -sd " " - | xargs $HOME/anaconda3/bin/conda install --channel anaconda --copy --yes --verbose ${OFFLINE}
+cat $pkgs_conda | paste -sd " " - | xargs $HOME/anaconda3/bin/conda install --channel default --copy --yes --verbose ${OFFLINE}
 
 
 ##############################################################################
