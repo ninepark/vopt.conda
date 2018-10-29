@@ -14,6 +14,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
      default-jre \
      dos2unix \
      emacs24 \
+     g++ \
      gdebi-core \
      gettext \
      gfortran \
