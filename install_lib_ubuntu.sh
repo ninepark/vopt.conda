@@ -13,7 +13,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
      default-jdk \
      default-jre \
      dos2unix \
-     emacs24 \
+     emacs \
      g++ \
      gdebi-core \
      gettext \
@@ -42,7 +42,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
      libpgm-dev \
      libpng++-dev \
      libpng-dev \
-     libpng12-dev \
      libpq-dev \
      libprotobuf-dev \
      libspatialindex-dev \
