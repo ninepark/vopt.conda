@@ -13,6 +13,8 @@ msgpack
 osqp
 pandasdmx
 pipdeptree
+pamqp
+rabbitpy
 scrapyd
 scrapyd-client
 tushare

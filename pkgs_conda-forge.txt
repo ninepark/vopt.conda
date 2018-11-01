@@ -21,7 +21,6 @@ django-guardian
 djangorestframework
 ecdsa
 events
-fastparquet
 feather-format
 flask-admin
 flask-babelex

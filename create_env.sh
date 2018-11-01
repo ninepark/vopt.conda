@@ -9,7 +9,7 @@ ENV=vopt
 if [[ $($HOME/anaconda3/bin/conda config --get channels) ]]; then
     $HOME/anaconda3/bin/conda config --remove-key channels;
 fi
-$HOME/anaconda3/bin/conda config --append channels anaconda --append channels conda-forge
+$HOME/anaconda3/bin/conda config --append channels default --append channels conda-forge
 
 
 if [[ "$#" -eq "0" ]]; then

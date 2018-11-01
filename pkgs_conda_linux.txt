@@ -33,6 +33,7 @@ entrypoints
 expat
 fabric
 fastcache
+fastparquet
 flake8
 flask
 fontconfig
