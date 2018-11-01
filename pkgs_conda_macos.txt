@@ -176,6 +176,7 @@ statsmodels
 tabulate
 terminado
 testpath
+thrift>=0.11.0
 tk
 toolz
 tornado

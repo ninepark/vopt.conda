@@ -83,7 +83,6 @@ suitesparse
 tbb
 tenacity
 terraform
-thrift
 treq
 uritemplate
 urlobject
