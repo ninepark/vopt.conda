@@ -193,7 +193,13 @@ $HOME/anaconda3/bin/conda clean --yes --all
 ##############################################################################
 echo "CyLP package installing..."
 
-if [[ -v CYLP_SRC_DIR ]]; then
+if ((BASH_VERSINFO[0] > 4 || (BASH_VERSINFO[0] == 4 && BASH_VERSINFO[1] >= 2))); then
+  isSet() { [[ -v $1 ]]; }
+else
+  isSet() { [[ ${1+_} ]]; }
+fi
+
+if isSet CYLP_SRC_DIR; then
   if [ -d "$CYLP_SRC_DIR" ]; then
     echo "CyLP package for Python3 Develop Mode installing from local: $CYLP_SRC_DIR" && \
     curdir=$PWD &&

@@ -8,6 +8,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
      autoconf \
      automake \
      build-essential \
+     bzip2 \
      cmake \
      curl \
      default-jdk \
@@ -28,6 +29,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
      libcupti-dev \
      libcurl4-gnutls-dev \
      libevent-dev \
+     libgconf-2-4 \
      libgdal-dev \
      libgeos-dev \
      libgflags-dev \
@@ -49,6 +51,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
      libssl-dev \
      libtiff5-dev \
      libtool \
+     libxi6 \
      make \
      man \
      memcached \
@@ -72,12 +75,12 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
      supervisor \
      swig \
      tmux \
+     unzip \
      uuid-dev \
      vim \
      wget \
+     xvfb \
      zip \
-     unzip \
-     bzip2 \
     && echo
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q autoremove
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y -q clean
