@@ -62,6 +62,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q \
      postgresql \
      postgresql-contrib \
      protobuf-compiler \
+     python3 \
+     python3-pip \
      rabbitmq-server \
      rsyslog \
      screen \
