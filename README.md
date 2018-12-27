@@ -21,7 +21,7 @@ a conda virtual enviroment named `vopt` for `vopt` Veranos Optimizer
 * You need to install Anaconda.
 
   Download 64-bit Python 3.6 version from
-    * https://www.continuum.io/downloads
+    * https://repo.anaconda.com/archive/
 
   and execute:
   ```
@@ -105,4 +105,5 @@ check you bash version and upgrade to 4.x.
 
 3. Change the default shell
 
-   ![Mac OSX Shell Change](./macosxchangeshell.png)
+   ![macosxchangeshell](./macosxchangeshell.png)
+
