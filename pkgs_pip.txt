@@ -6,6 +6,7 @@ cvxpy
 django-jinja
 fake-useragent
 Flask-Dance[sqla]
+Flask-Session
 ipython-genutils
 jsonpath-rw
 lunardate
