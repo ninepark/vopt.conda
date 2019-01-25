@@ -65,7 +65,6 @@ pgspecial
 prettytable
 pudb
 pyarrow
-pycrypto
 pyflakes
 pyhamcrest
 python-highcharts
